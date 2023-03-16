@@ -4,7 +4,7 @@ import defaultTheme from '../../../commons/style/themes/default';
 const StyledButton = styled.button`
   text-align: center;
   margin: 0 auto;
-  border: none;
+  border: ${props => `1px solid ${props.borderColor}` || 'none'};
   background-color: ${props => props.backgroundColor || defaultTheme.palette.white};
   color: ${defaultTheme.palette.white};
   cursor: pointer;
@@ -54,7 +54,7 @@ const StyledButton = styled.button`
     `}
 `;
 
-export default function Button({ disabled, size, onClick, type, children, className, backgroundColor }) {
+export default function Button({ disabled, size, onClick, type, children, className, backgroundColor, borderColor }) {
   return (
     // eslint-disable-next-line react/react-in-jsx-scope
     <StyledButton
@@ -64,6 +64,7 @@ export default function Button({ disabled, size, onClick, type, children, classN
       onClick={onClick}
       type={type || 'button'}
       backgroundColor={backgroundColor}
+      borderColor={borderColor}
     >
       {children}
     </StyledButton>

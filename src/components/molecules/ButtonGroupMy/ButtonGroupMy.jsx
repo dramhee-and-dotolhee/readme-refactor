@@ -10,9 +10,9 @@ const ButtonDiv = styled.div`
 `;
 
 const ButtonCustom = styled(Button)`
-	background-color: ${defaultTheme.palette.white};
+	// background-color: ${defaultTheme.palette.gray};
 	color: black;
-	border: 1px black solid ${defaultTheme.palette.gray};
+	// border: 1px black solid ${defaultTheme.palette.black};
 	margin: 15px 10px;
 `;
 
@@ -20,10 +20,10 @@ export default function ButtonGroupMy() {
 	return (
 		<ButtonDiv>
 			<Link to="/modifyprofile">
-				<ButtonCustom size="medium" children="프로필 수정" />
+				<ButtonCustom size="medium" children="프로필 수정" borderColor="gray" />
 			</Link>
 			<Link to="/AddProduct">
-				<ButtonCustom size="medium" children="상품등록" />
+				<ButtonCustom size="medium" children="상품등록" borderColor="gray" />
 			</Link>
 		</ButtonDiv>
 	);

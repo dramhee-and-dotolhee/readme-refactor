@@ -40,6 +40,7 @@ const PostBox = styled.div`
   flex-direction: column;
   gap: 16px;
   padding-top: 4px;
+  width: 100%;
 `;
 
 const PostWrapper = styled.div`
@@ -63,11 +64,11 @@ const UserId = styled.div`
   color: ${defaultTheme.palette.gray3};
 `;
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.p`
   line-height: 18px;
-  display: flex;
-  flex-direction: column;
+  text-align: justify;
   padding-top: ${props => (props.imgSrc ? '16px' : 0)};
+  width: 350px;
 `;
 
 const PostImg = styled.img`
@@ -80,6 +81,7 @@ const PostImg = styled.img`
 
 const LikeComment = styled.div`
   display: flex;
+  justify-content: flex-start;
 `;
 
 const HeartSvg = styled(HeartIcon)`
@@ -116,6 +118,10 @@ const Count = styled.p`
   line-height: ${defaultTheme.fontSize.sm};
   padding: 4px 0;
   color: ${defaultTheme.palette.gray3};
+`;
+
+const IconButton = styled(Button)`
+  margin: 0;
 `;
 
 // 얘도 빼서 쓸 예정..
@@ -189,7 +195,7 @@ export default function Posts({
               <img src={MoreIcon} alt="더보기" />
             </MoreBtn>
           </PostWrapper>
-          <ContentWrapper>{children}</ContentWrapper>
+          <ContentWrapper align="right">{children}</ContentWrapper>
           {imgSrc && <PostImg src={imgSrc} />}
           <LikeComment>
             {/* {hearted ? (
@@ -202,18 +208,18 @@ export default function Posts({
                             </div>
                         )} */}
             {isHearted ? (
-              <Button onClick={() => setIsHearted(false)}>
+              <IconButton onClick={() => setIsHearted(false)}>
                 <HeartFillSvg />
-              </Button>
+              </IconButton>
             ) : (
-              <Button onClick={() => setIsHearted(true)}>
+              <IconButton onClick={() => setIsHearted(true)}>
                 <HeartSvg />
-              </Button>
+              </IconButton>
             )}
             <Count>{heartsCount}</Count>
-            <Button className="commentClick" onClick={onComment}>
+            <IconButton className="commentClick" onClick={onComment}>
               <CommentSvg />
-            </Button>
+            </IconButton>
             <Count>{commentsCount}</Count>
           </LikeComment>
           <DateDiv>{postDate(date)}</DateDiv>
