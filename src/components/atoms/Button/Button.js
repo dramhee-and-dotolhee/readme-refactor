@@ -5,7 +5,7 @@ const StyledButton = styled.button`
   text-align: center;
   margin: 0 auto;
   border: none;
-  background-color: ${props => props.backgroundColor || defaultTheme.palette.primary};
+  background-color: ${props => props.backgroundColor || defaultTheme.palette.white};
   color: ${defaultTheme.palette.white};
   cursor: pointer;
 
