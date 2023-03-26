@@ -1,5 +1,8 @@
 https://poetic-capybara-f9ce0f.netlify.app/
 
+id : taewon
+pw : 123123
+
 # 📚 프로젝트 소개
 
 > *"내 이야기 좀 들어봐. 그리고 나를 읽어봐."*  
